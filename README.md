@@ -2,6 +2,13 @@
 
 A lightweight web app + Go backend that lets you import, browse, and manage your ChatGPT export locally. The project ships with a simple CRUD table for session metadata, one-click access to the original chat on chatgpt.com, and a local transcript viewer so you can keep a permanent copy even after deleting the cloud history.
 
+## Table of Contents
+- [Prerequisites](#prerequisites)
+- [Getting started](#getting-started)
+- [File layout](#file-layout)
+- [Common tasks](#common-tasks)
+- [Notes](#notes)
+
 ## Prerequisites
 
 - Go 1.25 or newer (bundled toolchain works fine on macOS/Linux).

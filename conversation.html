@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conversation Viewer</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1 id="conversation-title">Conversation</h1>
+    <p class="tagline"><a class="back-link" href="index.html">← Back to conversations</a></p>
+  </header>
+
+  <main>
+    <section class="panel">
+      <div class="conversation-meta">
+        <div>
+          <span class="meta-label">Started</span>
+          <time id="conversation-start"></time>
+        </div>
+        <div>
+          <span class="meta-label">Ended</span>
+          <time id="conversation-end"></time>
+        </div>
+        <div>
+          <span class="meta-label">Remote link</span>
+          <a id="conversation-remote" class="remote-link" href="#" target="_blank" rel="noopener noreferrer">Open in ChatGPT</a>
+        </div>
+      </div>
+      <p id="conversation-summary" class="conversation-summary"></p>
+    </section>
+
+    <section class="panel">
+      <h2 class="panel-title">Transcript</h2>
+      <div id="message-list" class="message-list"></div>
+    </section>
+  </main>
+
+  <dialog id="error-dialog">
+    <form method="dialog" class="dialog-form">
+      <h3>Error</h3>
+      <p id="error-message"></p>
+      <menu class="dialog-actions">
+        <button value="close" type="submit" class="primary-button">Close</button>
+      </menu>
+    </form>
+  </dialog>
+
+  <script src="conversation.js" type="module"></script>
+</body>
+</html>

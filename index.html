@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChatGPT Conversation Tracker</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>ChatGPT Conversation Tracker</h1>
+    <p class="tagline">Capture, review, and manage your ChatGPT sessions in one place.</p>
+  </header>
+
+  <main>
+    <section class="panel">
+      <h2 class="panel-title">Add Conversation</h2>
+      <form id="conversation-form" class="conversation-form">
+        <div class="form-field">
+          <label for="title">Title</label>
+          <input id="title" name="title" type="text" required placeholder="Brainstorming session" />
+        </div>
+        <div class="form-field">
+          <label for="dateStarted">Date started</label>
+          <input id="dateStarted" name="dateStarted" type="date" required />
+        </div>
+        <div class="form-field">
+          <label for="dateEnded">Date ended</label>
+          <input id="dateEnded" name="dateEnded" type="date" />
+        </div>
+        <div class="form-field form-field-wide">
+          <label for="summary">One-sentence summary</label>
+          <input id="summary" name="summary" type="text" required placeholder="Explored marketing copy ideas." />
+        </div>
+        <button type="submit" class="primary-button">Add Conversation</button>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2 class="panel-title">Conversation History</h2>
+      <div class="table-wrapper">
+        <table class="conversation-table" aria-describedby="table-caption">
+          <caption id="table-caption" class="sr-only">ChatGPT conversation metadata with actions to delete or rename entries.</caption>
+          <thead>
+            <tr>
+              <th scope="col">Title</th>
+              <th scope="col">Date started</th>
+              <th scope="col">Date ended</th>
+              <th scope="col">Summary</th>
+              <th scope="col" class="actions-col">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="conversation-table-body">
+            <tr id="empty-state-row">
+              <td colspan="5" class="empty-state">No conversations yet. Add one above to get started.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <button id="clear-all" class="danger-button" type="button">Delete All Conversations</button>
+    </section>
+  </main>
+
+  <dialog id="rename-dialog">
+    <form method="dialog" id="rename-form" class="dialog-form">
+      <h3>Rename Conversation</h3>
+      <input type="text" id="rename-input" required />
+      <menu class="dialog-actions">
+        <button value="cancel" type="button">Cancel</button>
+        <button value="confirm" type="submit" class="primary-button">Save</button>
+      </menu>
+    </form>
+  </dialog>
+
+  <script src="script.js" type="module"></script>
+</body>
+</html>

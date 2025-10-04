@@ -1,0 +1,15 @@
+# Go build cache
+.gocache/
+
+# Local, generated data stores
+/data/conversations_store.json
+/data/*.json
+conversations.json
+conversations-*.json
+
+# macOS metadata
+.DS_Store
+
+# IDE/editor state
+.vscode/
+.idea/
